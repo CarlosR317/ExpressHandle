@@ -1,38 +1,36 @@
-<h1>Burgers!</h1>
+<div class="container">
+  <h1>Burgers!</h1>
 
-<h2>Lets Make Burgers!</h2>
+  <h2>Lets Eat Some Burgers!</h2>
 
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
+  <ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> burger/burger-block devoured=true}}
     {{/unless}}
-  {{/each}}
-</ul>
+    {{/each}}
+  </ul>
 
-<h2>Cats that are sleepy!</h2>
+  <h2>All Full!</h2>
 
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
+  <ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burger/burger-block devoured=false}}
     {{/if}}
-  {{/each}}
-</ul>
+    {{/each}}
+  </ul>
 
-<h2>Add a Cat</h2>
-<form class="create-form">
+  <h2>Choose your burger!</h2>
 
-  <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
+  <form class="create-form">
 
-  <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
+    <div class="form-group">
+      <label for="bu">Burger Type:</label>
+      <input type="text" id="bu" name="name">
+    </div>
 
-  <button type="submit">Add Cat</button>
-</form>
+    <button class="btn btn-primary" type="submit">Add food</button>
+  </form>
+
+</div>
