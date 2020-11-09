@@ -1,5 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
+  // allows the user to pick the burger out of the data base
   $(".create-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
@@ -22,7 +23,7 @@ $(function () {
       }
     );
   });
-
+// allows the user to begin to "eat" the burger
   $(".devour-burger").on("click", function (event) {
 
     var id = $(this).data("id");
@@ -43,7 +44,7 @@ $(function () {
     );
   });
 });
-
+// allows the burger to make the burger go away
 $(".gone-burger").on("click", function (event) {
   var eatId = $(this).data("id");
 
